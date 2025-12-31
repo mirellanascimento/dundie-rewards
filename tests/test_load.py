@@ -7,3 +7,8 @@ from tests.constants import PEOPLE_FILE
 def test_load():
     """Test load function."""
     assert len(load(PEOPLE_FILE)) == 2
+
+@pytest.mark.high
+def test_load_positive_first_name_starts_with_j(request):
+    """Test function load function."""
+    assert load(PEOPLE_FILE)[0]["name"] == "Jim Halpert"
